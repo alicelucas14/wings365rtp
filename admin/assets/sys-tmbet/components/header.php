@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(!$_SESSION['sukseslogin']) {
+if(empty($_SESSION['sukseslogin'])) {
   header("Location: index.php");
   exit;
 }
@@ -163,10 +163,10 @@ $_SESSION['timeout'] = time();
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <form action="config/changepass.php">
+                <form action="config/changepass.php" method="POST">
                 <div class="modal-body">
-                    <input type="password" name="changepass" class="form-control border border-primary" placeholder="Change Your New Password here..">
-                    <input type="hidden" name="userchange" value="<?php echo $_SESSION['sukseslogin']; ?>">
+                    <input type="password" name="changepass" class="form-control border border-primary" placeholder="Change Your New Password here.." required>
+                    <input type="hidden" name="userchange" value="<?php echo htmlspecialchars($_SESSION['id'] ?? ''); ?>">
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-primary">Save changes</button>
