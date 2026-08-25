@@ -82,7 +82,7 @@ function find_game_image_url($filename_from_db) {
                     $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
                     $offset = ($page - 1) * $limit;
                     $search = isset($_GET['search']) ? mysqli_real_escape_string($data, $_GET['search']) : '';
-                    $where_clause = "WHERE demo_provider = '$provider_code'" . (!empty($search) ? " AND game_title LIKE '%$search%'" : '');
+                    $where_clause = "WHERE LOWER(demo_provider) = LOWER('$provider_code')" . (!empty($search) ? " AND game_title LIKE '%$search%'" : '');
                     
                     $games_sql = "SELECT * FROM demo_games $where_clause ORDER BY game_title ASC LIMIT $limit OFFSET $offset";
                     $games_query = mysqli_query($data, $games_sql);

@@ -1,3 +1,5 @@
+DELETE FROM `demo_games` WHERE LOWER(demo_provider) = '568win';
+
 INSERT INTO `demo_games` (`demo_provider`, `game_title`, `demo_name`, `demo_gamelink`) VALUES
 ('568win', '568WIN Game 001', '568win-001.png', '#'),
 ('568win', '568WIN Game 002', '568win-002.png', '#'),

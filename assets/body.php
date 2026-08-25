@@ -103,7 +103,7 @@
                 echo '<div class="col-12"><h4 class="title-game">' . htmlspecialchars($provider_name_display) . ' SLOT LIVE RTP</h4><h6><i class="lni lni-thumbs-up"></i> SUKA(' . number_format($provider_rating_display, 1) . '): ' . $stars_html . '</h6></div>';
 
                 $daftar = ftab("link_daftarbo", "web_setting", "link_daftarbo");
-                $games_sql = "SELECT demo_name FROM demo_games WHERE demo_provider = '$prov' ORDER BY id ASC";
+                $games_sql = "SELECT demo_name FROM demo_games WHERE LOWER(demo_provider) = LOWER('$prov') ORDER BY id ASC";
                 $games_query = mysqli_query($data, $games_sql);
                 
                 if (mysqli_num_rows($games_query) > 0) {
