@@ -15,7 +15,7 @@
                 $qslide = mysqli_query($data, $sslide);
                 if (mysqli_num_rows($qslide) > 0) {
                     while ($fslide = mysqli_fetch_assoc($qslide)) {
-                        echo '<div class="swiper-slide"><img src="' . htmlspecialchars($fslide['sliders']) . '" loading="lazy" class="slider-img rounded" alt="slider image"><div class="swiper-lazy-preloader"></div></div>';
+                        echo '<div class="swiper-slide"><img src="' . htmlspecialchars($fslide['sliders']) . '" loading="lazy" class="slider-img rounded" alt="slider image" onerror="this.onerror=null;this.src=\'images/placeholder.png\';"><div class="swiper-lazy-preloader"></div></div>';
                     }
                 }
                 ?>

@@ -51,8 +51,9 @@ function find_game_image_url($filename_from_db) {
 <div class="row">
     <div class="col-12">
         <div class="card">
-            <div class="card-header bg-light">
+            <div class="card-header bg-light d-flex justify-content-between align-items-center">
                 <h4 class="card-title mb-0"><i class="fas fa-gamepad"></i> Demo Slot Management</h4>
+                <a href="sync_games.php" class="btn btn-sm btn-success" onclick="return confirm('Scan images/games/ folder and add all missing games to database?');"><i class="fas fa-sync"></i> Sync All Games from Disk</a>
             </div>
             <div class="card-body">
                 <!-- Provider Selector -->
